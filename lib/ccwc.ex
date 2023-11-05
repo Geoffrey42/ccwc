@@ -7,7 +7,7 @@ defmodule CCWC do
   alias Presenters.StdoutPresenter
 
   def main(args) when length(args) != 2 do
-    StdoutPresenter.print_error(:incorrect_args)
+    StdoutPresenter.print_error({:incorrect_args_nb, length(args)})
   end
 
   def main(args) do

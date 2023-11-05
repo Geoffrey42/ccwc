@@ -4,6 +4,15 @@ defmodule Presenters.StdoutPresenter do
   end
 
   def print_error(error) do
-    IO.puts(:stderr, Atom.to_string(error))
+    case error do
+      {:incorrect_args_nb, args_nb} ->
+        IO.puts(:stderr, "error: expected 2 arguments, got " <> Integer.to_string(args_nb))
+
+      {:unknown, unknown_option} ->
+        IO.puts(:stderr, "error: unknown #{unknown_option} option")
+
+      {:file_error, reason, file_path} ->
+        IO.puts(:stderr, "error with #{file_path}: #{reason}")
+    end
   end
 end

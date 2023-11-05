@@ -9,8 +9,8 @@ defmodule Controllers.OptionController do
       "-c" ->
         CountBytes.count(content) |> StdoutPresenter.print_results()
 
-      _unknown_option ->
-        StdoutPresenter.print_error(:unknown)
+      unknown_option ->
+        StdoutPresenter.print_error({:unknown, unknown_option})
     end
   end
 end

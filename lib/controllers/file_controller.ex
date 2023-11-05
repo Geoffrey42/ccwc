@@ -18,7 +18,7 @@ defmodule Controllers.FileController do
         OptionController.dispatch(option, content)
 
       {:error, reason} ->
-        StdoutPresenter.print_error(reason)
+        StdoutPresenter.print_error({:file_error, reason, file_path})
     end
   end
 end
