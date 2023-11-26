@@ -1,12 +1,13 @@
-defmodule Presenters.StdoutPresenter do
+defmodule Presenters.Stdout do
   def print_results(results) do
-    IO.puts("   " <> Integer.to_string(results.bytes) <> " " <> results.file_name)
+    IO.puts("   #{Integer.to_string(results.bytes)} #{results.file_name}")
+    :ok
   end
 
   def print_error(error) do
     case error do
       {:incorrect_args_nb, args_nb} ->
-        IO.puts(:stderr, "error: expected 2 arguments, got " <> Integer.to_string(args_nb))
+        IO.puts(:stderr, "error: expected 2 arguments, got #{Integer.to_string(args_nb)}")
 
       {:unknown, unknown_option} ->
         IO.puts(:stderr, "error: unknown #{unknown_option} option")

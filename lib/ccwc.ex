@@ -4,10 +4,10 @@ defmodule CCWC do
   """
 
   alias Controllers.FileController
-  alias Presenters.StdoutPresenter
+  alias Presenters.Stdout
 
   def main(args) when length(args) != 2 do
-    StdoutPresenter.print_error({:incorrect_args_nb, length(args)})
+    Stdout.print_error({:incorrect_args_nb, length(args)})
   end
 
   def main(args) do
