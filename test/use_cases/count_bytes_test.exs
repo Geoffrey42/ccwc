@@ -1,7 +1,7 @@
-defmodule UseCase.CountBytesTest do
+defmodule UseCases.CountBytesTest do
   use ExUnit.Case
 
-  alias UseCase.CountBytes
+  alias UseCases.CountBytes
   alias Entities.Content
   @moduletag :capture_log
 

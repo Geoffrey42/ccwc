@@ -25,8 +25,4 @@ defmodule Controllers.FileController do
   defp stdin do
     Application.get_env(:ccwc, :file_reader)
   end
-
-  defp stdout do
-    Application.get_env(:ccwc, :file_reader)
-  end
 end
