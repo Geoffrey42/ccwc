@@ -4,6 +4,7 @@ defmodule Presenters.Stdout do
       :bytes -> IO.puts("   #{Integer.to_string(results.bytes)} #{results.file_name}")
       :lines -> IO.puts("   #{Integer.to_string(results.lines)} #{results.file_name}")
       :words -> IO.puts("   #{Integer.to_string(results.words)} #{results.file_name}")
+      :characters -> IO.puts("   #{Integer.to_string(results.characters)} #{results.file_name}")
     end
 
     :ok

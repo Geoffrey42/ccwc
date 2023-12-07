@@ -4,6 +4,7 @@ defmodule Controllers.OptionController do
   alias UseCases.CountBytes
   alias UseCases.CountLines
   alias UseCases.CountWords
+  alias UseCases.CountCharacters
   alias Presenters.Stdout
 
   def dispatch("-c", content) do
@@ -16,6 +17,10 @@ defmodule Controllers.OptionController do
 
   def dispatch("-w", content) do
     CountWords.count(content) |> Stdout.print_results(:words)
+  end
+
+  def dispatch("-m", content) do
+    CountCharacters.count(content) |> Stdout.print_results(:characters)
   end
 
   def dispatch(unknown_option, _content) do
